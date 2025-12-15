@@ -32,4 +32,4 @@ scrape_configs:
           app: "prometheus"
   - job_name: "node_exporter"
     static_configs:
-      - targets: ["localhost:9100"]
+      - targets: ["localhost:9100", "35.225.178.117:9100"]
