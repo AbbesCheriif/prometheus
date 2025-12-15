@@ -37,12 +37,15 @@ scrape_configs:
     static_configs:
       - targets: ["35.225.178.117:9104"]
   - job_name: "prometheus_blackbox"
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
     static_configs:
       - targets: 
           - prometheus.io
-          metrics_path: /probe
-          params:
-            module:
-              - http_2xx
+          # metrics_path: /probe
+          # params:
+          #   module:
+          #     - http_2xx
 
         
