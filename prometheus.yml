@@ -54,3 +54,7 @@ scrape_configs:
   - job_name: "python_app"
     static_configs:
       - targets: ["34.42.224.185:5001"]
+
+  - job_name: "docker_app"
+    static_configs:
+      - targets: ["35.223.203.177:5001"]
