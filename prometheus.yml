@@ -51,4 +51,6 @@ scrape_configs:
       - target_label: __address__
         replacement: 34.134.2.137:9115
     
-        
+  - job_name: "python_app"
+    static_configs:
+      - tragets: ["34.42.224.185:5001"]
