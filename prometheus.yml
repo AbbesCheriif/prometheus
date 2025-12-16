@@ -53,4 +53,4 @@ scrape_configs:
     
   - job_name: "python_app"
     static_configs:
-      - tragets: ["34.42.224.185:5001"]
+      - targets: ["34.42.224.185:5001"]
