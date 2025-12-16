@@ -6,16 +6,18 @@ REQUEST_IN_PROGRESS = Gauge('request_in_progress', "Number of live Request on Ap
 REQUEST_LAST_EXECUTED = Gauge('request_last_served', "Time the application was last served")
 
 class HandleRequests(http.server.BaseHTTPRequestHandler):
+    @REQUEST_IN_PROGRESS.track_inprogress()
     def do_GET(self):
-        REQUEST_IN_PROGRESS.inc()
+        #REQUEST_IN_PROGRESS.inc()
         time.sleep(7)
         self.send_response(200)
         self.send_header("Content-type", "text/html")
         self.end_headers()
         self.wfile.write(bytes("<html><head><title>First python Application</title></head><body style='color: #333; margin-top: 30px;'><center><h2>Welcome to the first Python application.</center></h2></body></html>", "utf-8"))
         self.wfile.close
-        REQUEST_LAST_EXECUTED.set(time.time())
-        REQUEST_IN_PROGRESS.dec()
+        REQUEST_LAST_EXECUTED.set_to_current_time()
+        # REQUEST_LAST_EXECUTED.set(time.time())
+        #REQUEST_IN_PROGRESS.dec()
 
 if __name__ == "__main__":
     start_http_server(5001)
