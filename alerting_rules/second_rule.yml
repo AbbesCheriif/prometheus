@@ -4,3 +4,5 @@ groups:
     - alert: localhost_instance_status
       expr: up{instance=~"localhost:.*"} == 0
       for: 2m
+      labels:
+        - sevrity: CRITICAL
