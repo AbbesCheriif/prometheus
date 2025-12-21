@@ -1,0 +1,5 @@
+groups:
+  - name: example
+    rules:
+    - alert: localhost_instance_status
+      expr: up{instance=~"localhost:.*"} == 0
