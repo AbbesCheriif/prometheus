@@ -32,10 +32,10 @@ scrape_configs:
           app: "prometheus"
   - job_name: "node_exporter"
     static_configs:
-      - targets: ["localhost:9100", "35.225.178.117:9100"]
+      - targets: ["localhost:9100", "34.16.18.46:9100"]
   - job_name: mysql_server
     static_configs:
-      - targets: ["35.225.178.117:9104"]
+      - targets: ["34.16.18.46:9104"]
   - job_name: "prometheus_blackbox"
     metrics_path: /probe
     params:
