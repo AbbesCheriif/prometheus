@@ -1,0 +1,2 @@
+# injecter le password dans le fichier : 
+sed -i "s/auth_password: \".*\"/auth_password: \"$(cat password.txt)\"/" alertmanager.yml
