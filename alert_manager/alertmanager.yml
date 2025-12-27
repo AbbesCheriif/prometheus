@@ -1,0 +1,12 @@
+route:
+  receiver: admin
+
+receivers:
+  - name: admin
+    email_config:
+      - to: "abbes.cherif@enis.tn"
+        from: "abbeschrif575@gmail.com"
+        smarthost: smtp.gmail.com:587
+        auth_username: "abbeschrif575@gmail.com"
+        auth_identity: "abbeschrif575@gmail.com"
+        auth_password: "16-digit-password"
